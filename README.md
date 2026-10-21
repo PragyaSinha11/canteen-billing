@@ -1,2 +1,2 @@
 # canteen-billing
-groump project
+group project
