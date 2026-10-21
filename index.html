@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Canteen Billing System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Canteen Billing System</h1>
+    <small>GNIOT &middot; Prototype</small>
+  </header>
+
+  <nav>
+    <button id="t-bill" class="on">Billing</button>
+    <button id="t-orders">Orders</button>
+    <button id="t-menu">Menu</button>
+  </nav>
+
+  <main>
+    <!-- Billing tab -->
+    <section id="v-bill">
+      <div class="grid" id="menuGrid"></div>
+      <div class="card">
+        <h2>Current Order</h2>
+        <div id="cart"></div>
+        <div class="total"><span>Total</span><span id="total">0.00</span></div>
+        <div class="muted" id="count">Total items: 0</div>
+        <button class="btn" id="gen" disabled>Generate Bill</button>
+        <button class="btn alt" id="clear">Clear Order</button>
+      </div>
+    </section>
+
+    <!-- Orders tab -->
+    <section id="v-orders" hidden>
+      <div class="card">
+        <h2>Today</h2>
+        <div class="total"><span id="todayCount">0 bills</span><span id="todayTotal">0.00</span></div>
+      </div>
+      <div class="card">
+        <h2>Order History</h2>
+        <div id="history"></div>
+        <button class="btn alt" id="wipe">Delete All Records</button>
+      </div>
+    </section>
+
+    <!-- Menu tab -->
+    <section id="v-menu" hidden>
+      <div class="card">
+        <h2>Add Item</h2>
+        <div class="form">
+          <input id="nName" placeholder="Item name">
+          <input id="nPrice" type="number" min="0" step="0.5" placeholder="Price">
+        </div>
+        <button class="btn" id="add">Add to Menu</button>
+      </div>
+      <div class="card">
+        <h2>Menu Items</h2>
+        <div id="menuList"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Receipt popup -->
+  <div id="receipt">
+    <div>
+      <div class="bill" id="billBody"></div>
+      <button class="btn noprint" id="print">Print Bill</button>
+      <button class="btn alt noprint" id="done">Close</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
