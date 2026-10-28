@@ -16,7 +16,7 @@
  <div class="card"><input id="q" placeholder="Search item… (press Enter to add the first match, “/” to focus)"><div class="chips" id="chips"></div><div class="grid" id="grid"></div></div>
  <div class="card"><h2>Current Order</h2><div id="cart"></div>
   <div class="f2"><input id="disc" type="number" min="0" step="any" placeholder="Discount"><select id="dtype"><option value="%">Discount in %</option><option value="₹">Discount in ₹</option></select></div>
-  <div class="f2"><select id="pay"><option>Cash</option><option>UPI</option><option>Card</option></select><input id="rcv" type="number" min="0" step="any" placeholder="Cash received"></div>
+  <div class="f2"><select id="pay"><option>Cash</option><option value="UPI">UPI (Scan &amp; Pay)</option><option>Card</option></select><input id="rcv" type="number" min="0" step="any" placeholder="Cash received"></div>
   <div style="margin-top:8px" id="sums"></div>
   <button class="btn" id="gen" data-a="gen" disabled>Generate Bill</button><button class="btn alt" data-a="clr">Clear Order</button></div>
 </div></section>
@@ -47,6 +47,7 @@
 
 <div class="ov" id="rc"><div class="box"><div class="bill" id="bb"></div>
  <button class="btn np" data-a="prt">Print Bill</button><button class="btn alt np" data-a="done">Close</button></div></div>
+<div class="ov" id="qr"><div class="dbox" style="text-align:center;max-height:92%;overflow:auto"><h2>Scan &amp; Pay</h2><img id="qrImg" alt="Scan to pay" style="width:100%;max-width:260px;border-radius:8px;display:block;margin:0 auto"><div class="sum big"><span>Amount</span><span id="qrAmt"></span></div><p class="muted" id="qrNote"></p><button class="btn" data-a="qrok">Payment Received</button><button class="btn alt" data-a="qrcancel">Cancel</button></div></div>
 <div class="ov" id="dg"><div class="dbox"><h2 id="dt"></h2><textarea id="dx"></textarea>
  <button class="btn sm" data-a="copy">Copy</button><button class="btn sm" data-a="dl">Download</button><button class="btn sm" data-a="apply" id="ap" hidden>Restore Now</button><button class="btn alt sm" data-a="dclose">Close</button></div></div>
 
